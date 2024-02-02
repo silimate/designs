@@ -10,7 +10,7 @@ set clks [get_ports clk*]
 set inputs_no_clks [all_inputs -no_clocks]
 
 # Create clocks
-create_clock -name clk -period 1 $clks
+create_clock -name clk -period $::env(clock_period) $clks
 
 # Set input delays
 set_input_delay -clock clk 0 $inputs_no_clks
