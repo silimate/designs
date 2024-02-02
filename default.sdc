@@ -6,7 +6,7 @@ proc ldiff {a b} {
 }
 
 # Find clocks and resets
-set clks [get_ports clk* clock*]
+set clks [get_ports clk*]
 set inputs_no_clks [all_inputs -no_clocks]
 
 # Create clocks
