@@ -6,14 +6,8 @@ proc ldiff {a b} {
 }
 
 # Find clocks and resets
-set clks [concat [get_ports -filter name=~clk* *] [get_ports -filter name=~clock* *]]
-set rsts [concat [get_ports -filter name=~rst* *] [get_ports -filter name=~reset* *]]
-set inputs_no_clks [ldiff [all_inputs] $clks]
-
-# DEBUG
-puts $clks
-puts $rsts
-puts $inputs_no_clks
+set clks [get_ports clk* clock*]
+set inputs_no_clks [all_inputs -no_clocks]
 
 # Create clocks
 create_clock -name clk -period 1 $clks
