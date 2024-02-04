@@ -1,6 +1,6 @@
 # Create clocks (virtual if none are found)
 set clks [get_ports -nocase *clk*]
-if {[llength $clks] == 0} {
+if {$clks == ""} {
   create_clock -name clk -period $::env(clock_period)
 } else {
   create_clock -name clk -period $::env(clock_period) $clks
