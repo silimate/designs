@@ -39,7 +39,7 @@
 //-
 //- A bit-wise inverter. This corresponds to the Verilog unary prefix '~' operator.
 //-
-module \$not (A, Y);
+module op_not (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -67,7 +67,7 @@ endmodule
 //-
 //- A buffer. This corresponds to the Verilog unary prefix '+' operator.
 //-
-module \$pos (A, Y);
+module op_pos (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -94,7 +94,7 @@ endmodule
 //-
 //- An arithmetic inverter. This corresponds to the Verilog unary prefix '-' operator.
 //-
-module \$neg (A, Y);
+module op_neg (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -121,7 +121,7 @@ endmodule
 //-
 //- A bit-wise AND. This corresponds to the Verilog '&' operator.
 //-
-module \$and (A, B, Y);
+module op_and (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -151,7 +151,7 @@ endmodule
 //-
 //- A bit-wise OR. This corresponds to the Verilog '|' operator.
 //-
-module \$or (A, B, Y);
+module op_or (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -181,7 +181,7 @@ endmodule
 //-
 //- A bit-wise XOR. This corresponds to the Verilog '^' operator.
 //-
-module \$xor (A, B, Y);
+module op_xor (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -211,7 +211,7 @@ endmodule
 //-
 //- A bit-wise XNOR. This corresponds to the Verilog '~^' operator.
 //-
-module \$xnor (A, B, Y);
+module op_xnor (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -241,7 +241,7 @@ endmodule
 //-
 //- An AND reduction. This corresponds to the Verilog unary prefix '&' operator.
 //-
-module \$reduce_and (A, Y);
+module op_reduce_and (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -268,7 +268,7 @@ endmodule
 //-
 //- An OR reduction. This corresponds to the Verilog unary prefix '|' operator.
 //-
-module \$reduce_or (A, Y);
+module op_reduce_or (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -295,7 +295,7 @@ endmodule
 //-
 //- A XOR reduction. This corresponds to the Verilog unary prefix '^' operator.
 //-
-module \$reduce_xor (A, Y);
+module op_reduce_xor (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -322,7 +322,7 @@ endmodule
 //-
 //- A XNOR reduction. This corresponds to the Verilog unary prefix '~^' operator.
 //-
-module \$reduce_xnor (A, Y);
+module op_reduce_xnor (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -350,7 +350,7 @@ endmodule
 //- An OR reduction. This cell type is used instead of $reduce_or when a signal is
 //- implicitly converted to a boolean signal, e.g. for operands of '&&' and '||'.
 //-
-module \$reduce_bool (A, Y);
+module op_reduce_bool (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -371,7 +371,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$shl (A, B, Y);
+module op_shl (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -395,7 +395,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$shr (A, B, Y);
+module op_shr (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -419,7 +419,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$sshl (A, B, Y);
+module op_sshl (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -443,7 +443,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$sshr (A, B, Y);
+module op_sshr (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -467,7 +467,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$shift (A, B, Y);
+module op_shift (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -499,7 +499,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$shiftx (A, B, Y);
+module op_shiftx (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -524,7 +524,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$fa (A, B, C, X, Y);
+module op_fa (A, B, C, X, Y);
 
 parameter WIDTH = 1;
 
@@ -551,7 +551,7 @@ endmodule
 //- quickly.
 //- Typically created during `techmap` of $alu cells (see the "_90_alu" rule in
 //- +/techmap.v).
-module \$lcu (P, G, CI, CO);
+module op_lcu (P, G, CI, CO);
 
 parameter WIDTH = 1;
 
@@ -586,7 +586,7 @@ endmodule
 //-   $add, $sub, $lt, $le, $ge, $gt, $eq, $eqx, $ne, $nex
 //- cells into this $alu cell.
 //-
-module \$alu (A, B, CI, BI, X, Y, CO);
+module op_alu (A, B, CI, BI, X, Y, CO);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -639,7 +639,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$lt (A, B, Y);
+module op_lt (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -663,7 +663,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$le (A, B, Y);
+module op_le (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -687,7 +687,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$eq (A, B, Y);
+module op_eq (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -711,7 +711,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$ne (A, B, Y);
+module op_ne (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -735,7 +735,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$eqx (A, B, Y);
+module op_eqx (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -759,7 +759,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$nex (A, B, Y);
+module op_nex (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -783,7 +783,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$ge (A, B, Y);
+module op_ge (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -807,7 +807,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$gt (A, B, Y);
+module op_gt (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -831,7 +831,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$add (A, B, Y);
+module op_add (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -855,7 +855,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$sub (A, B, Y);
+module op_sub (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -879,7 +879,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$mul (A, B, Y);
+module op_mul (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -903,7 +903,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$macc (A, B, Y);
+module op_macc (A, B, Y);
 
 parameter A_WIDTH = 2;
 parameter B_WIDTH = 2;
@@ -1011,7 +1011,7 @@ endmodule
 //-
 //- Division with truncated result (rounded towards 0).
 //-
-module \$div (A, B, Y);
+module op_div (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -1043,7 +1043,7 @@ endmodule
 //-
 //- Invariant: $div(A, B) * B + $mod(A, B) == A
 //-
-module \$mod (A, B, Y);
+module op_mod (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -1073,7 +1073,7 @@ endmodule
 //-
 //- Division with floored result (rounded towards negative infinity).
 //-
-module \$divfloor (A, B, Y);
+module op_divfloor (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -1112,7 +1112,7 @@ endmodule
 //-
 //- Invariant: $divfloor(A, B) * B + $modfloor(A, B) == A
 //-
-module \$modfloor (A, B, Y);
+module op_modfloor (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -1145,7 +1145,7 @@ endmodule
 // --------------------------------------------------------
 `ifndef SIMLIB_NOPOW
 
-module \$pow (A, B, Y);
+module op_pow (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -1174,7 +1174,7 @@ endmodule
 `endif
 // --------------------------------------------------------
 
-module \$logic_not (A, Y);
+module op_logic_not (A, Y);
 
 parameter A_SIGNED = 0;
 parameter A_WIDTH = 2;
@@ -1195,7 +1195,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$logic_and (A, B, Y);
+module op_logic_and (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -1219,7 +1219,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$logic_or (A, B, Y);
+module op_logic_or (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
@@ -1243,7 +1243,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$slice (A, Y);
+module op_slice (A, Y);
 
 parameter OFFSET = 0;
 parameter A_WIDTH = 2;
@@ -1258,7 +1258,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$concat (A, B, Y);
+module op_concat (A, B, Y);
 
 parameter A_WIDTH = 2;
 parameter B_WIDTH = 2;
@@ -1273,7 +1273,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$mux (A, B, S, Y);
+module op_mux (A, B, S, Y);
 
 parameter WIDTH = 2;
 
@@ -1287,7 +1287,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$bmux (A, S, Y);
+module op_bmux (A, S, Y);
 
 parameter WIDTH = 2;
 parameter S_WIDTH = 2;
@@ -1300,8 +1300,8 @@ wire [WIDTH-1:0] bm0_out, bm1_out;
 
 generate
 	if (S_WIDTH > 1) begin:muxlogic
-		\$bmux #(.WIDTH(WIDTH), .S_WIDTH(S_WIDTH-1)) bm0 (.A(A[(WIDTH << (S_WIDTH - 1))-1:0]), .S(S[S_WIDTH-2:0]), .Y(bm0_out));
-		\$bmux #(.WIDTH(WIDTH), .S_WIDTH(S_WIDTH-1)) bm1 (.A(A[(WIDTH << S_WIDTH)-1:WIDTH << (S_WIDTH - 1)]), .S(S[S_WIDTH-2:0]), .Y(bm1_out));
+		op_bmux #(.WIDTH(WIDTH), .S_WIDTH(S_WIDTH-1)) bm0 (.A(A[(WIDTH << (S_WIDTH - 1))-1:0]), .S(S[S_WIDTH-2:0]), .Y(bm0_out));
+		op_bmux #(.WIDTH(WIDTH), .S_WIDTH(S_WIDTH-1)) bm1 (.A(A[(WIDTH << S_WIDTH)-1:WIDTH << (S_WIDTH - 1)]), .S(S[S_WIDTH-2:0]), .Y(bm1_out));
 		assign Y = S[S_WIDTH-1] ? bm1_out : bm0_out;
 	end else if (S_WIDTH == 1) begin:simple
 		assign Y = S ? A[2*WIDTH-1:WIDTH] : A[WIDTH-1:0];
@@ -1314,7 +1314,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$pmux (A, B, S, Y);
+module op_pmux (A, B, S, Y);
 
 parameter WIDTH = 2;
 parameter S_WIDTH = 2;
@@ -1348,7 +1348,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$demux (A, S, Y);
+module op_demux (A, S, Y);
 
 parameter WIDTH = 1;
 parameter S_WIDTH = 1;
@@ -1369,7 +1369,7 @@ endmodule
 // --------------------------------------------------------
 `ifndef SIMLIB_NOLUT
 
-module \$lut (A, Y);
+module op_lut (A, Y);
 
 parameter WIDTH = 2;
 parameter LUT = 0;
@@ -1377,14 +1377,14 @@ parameter LUT = 0;
 input [WIDTH-1:0] A;
 output Y;
 
-\$bmux #(.WIDTH(1), .S_WIDTH(WIDTH)) mux(.A(LUT[(1<<WIDTH)-1:0]), .S(A), .Y(Y));
+op_bmux #(.WIDTH(1), .S_WIDTH(WIDTH)) mux(.A(LUT[(1<<WIDTH)-1:0]), .S(A), .Y(Y));
 
 endmodule
 
 `endif
 // --------------------------------------------------------
 
-module \$sop (A, Y);
+module op_sop (A, Y);
 
 parameter WIDTH = 2;
 parameter DEPTH = 0;
@@ -1412,7 +1412,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$tribuf (A, EN, Y);
+module op_tribuf (A, EN, Y);
 
 parameter WIDTH = 2;
 
@@ -1426,7 +1426,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$specify2 (EN, SRC, DST);
+module op_specify2 (EN, SRC, DST);
 
 parameter FULL = 0;
 parameter SRC_WIDTH = 1;
@@ -1464,7 +1464,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$specify3 (EN, SRC, DST, DAT);
+module op_specify3 (EN, SRC, DST, DAT);
 
 parameter FULL = 0;
 parameter SRC_WIDTH = 1;
@@ -1572,7 +1572,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$specrule (EN_SRC, EN_DST, SRC, DST);
+module op_specrule (EN_SRC, EN_DST, SRC, DST);
 
 parameter TYPE = "";
 parameter T_LIMIT = 0;
@@ -1601,7 +1601,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$bweqx (A, B, Y);
+module op_bweqx (A, B, Y);
 
 parameter WIDTH = 2;
 
@@ -1619,7 +1619,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$bwmux (A, B, S, Y);
+module op_bwmux (A, B, S, Y);
 
 parameter WIDTH = 2;
 
@@ -1638,7 +1638,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$assert (A, EN);
+module op_assert (A, EN);
 
 input A, EN;
 
@@ -1655,7 +1655,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$assume (A, EN);
+module op_assume (A, EN);
 
 input A, EN;
 
@@ -1672,7 +1672,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$live (A, EN);
+module op_live (A, EN);
 
 input A, EN;
 
@@ -1680,7 +1680,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$fair (A, EN);
+module op_fair (A, EN);
 
 input A, EN;
 
@@ -1688,7 +1688,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$cover (A, EN);
+module op_cover (A, EN);
 
 input A, EN;
 
@@ -1696,7 +1696,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$initstate (Y);
+module op_initstate (Y);
 
 output reg Y;
 reg [3:0] cnt = 1;
@@ -1713,7 +1713,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$anyconst (Y);
+module op_anyconst (Y);
 
 parameter WIDTH = 2;
 
@@ -1725,7 +1725,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$anyseq (Y);
+module op_anyseq (Y);
 
 parameter WIDTH = 2;
 
@@ -1740,7 +1740,7 @@ endmodule
 `ifndef SIMLIB_GLOBAL_CLOCK
 `define SIMLIB_GLOBAL_CLOCK $global_clk
 `endif
-module \$anyinit (D, Q);
+module op_anyinit (D, Q);
 
 parameter WIDTH = 2;
 
@@ -1757,7 +1757,7 @@ endmodule
 `endif
 // --------------------------------------------------------
 
-module \$allconst (Y);
+module op_allconst (Y);
 
 parameter WIDTH = 2;
 
@@ -1769,7 +1769,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$allseq (Y);
+module op_allseq (Y);
 
 parameter WIDTH = 2;
 
@@ -1781,7 +1781,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$equiv (A, B, Y);
+module op_equiv (A, B, Y);
 
 input A, B;
 output Y;
@@ -1801,7 +1801,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$print (EN, TRG, ARGS);
+module op_print (EN, TRG, ARGS);
 
 parameter FORMAT = "";
 parameter ARGS_WIDTH = 2;
@@ -1820,7 +1820,7 @@ endmodule
 // --------------------------------------------------------
 `ifndef SIMLIB_NOSR
 
-module \$sr (SET, CLR, Q);
+module op_sr (SET, CLR, Q);
 
 parameter WIDTH = 2;
 parameter SET_POLARITY = 1'b1;
@@ -1852,7 +1852,7 @@ endmodule
 `define SIMLIB_GLOBAL_CLOCK $global_clk
 `endif
 
-module \$ff (D, Q);
+module op_ff (D, Q);
 
 parameter WIDTH = 2;
 
@@ -1868,7 +1868,7 @@ endmodule
 `endif
 // --------------------------------------------------------
 
-module \$dff (CLK, D, Q);
+module op_dff (CLK, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -1886,7 +1886,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$dffe (CLK, EN, D, Q);
+module op_dffe (CLK, EN, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -1906,7 +1906,7 @@ endmodule
 // --------------------------------------------------------
 `ifndef SIMLIB_NOSR
 
-module \$dffsr (CLK, SET, CLR, D, Q);
+module op_dffsr (CLK, SET, CLR, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -1938,7 +1938,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$dffsre (CLK, SET, CLR, EN, D, Q);
+module op_dffsre (CLK, SET, CLR, EN, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -1972,7 +1972,7 @@ endmodule
 `endif
 // --------------------------------------------------------
 
-module \$adff (CLK, ARST, D, Q);
+module op_adff (CLK, ARST, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -1996,7 +1996,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$aldff (CLK, ALOAD, AD, D, Q);
+module op_aldff (CLK, ALOAD, AD, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -2020,7 +2020,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$sdff (CLK, SRST, D, Q);
+module op_sdff (CLK, SRST, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -2044,7 +2044,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$adffe (CLK, ARST, EN, D, Q);
+module op_adffe (CLK, ARST, EN, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -2069,7 +2069,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$aldffe (CLK, ALOAD, AD, EN, D, Q);
+module op_aldffe (CLK, ALOAD, AD, EN, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -2094,7 +2094,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$sdffe (CLK, SRST, EN, D, Q);
+module op_sdffe (CLK, SRST, EN, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -2119,7 +2119,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$sdffce (CLK, SRST, EN, D, Q);
+module op_sdffce (CLK, SRST, EN, D, Q);
 
 parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
@@ -2146,7 +2146,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$dlatch (EN, D, Q);
+module op_dlatch (EN, D, Q);
 
 parameter WIDTH = 2;
 parameter EN_POLARITY = 1'b1;
@@ -2164,7 +2164,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$adlatch (EN, ARST, D, Q);
+module op_adlatch (EN, ARST, D, Q);
 
 parameter WIDTH = 2;
 parameter EN_POLARITY = 1'b1;
@@ -2187,7 +2187,7 @@ endmodule
 // --------------------------------------------------------
 `ifndef SIMLIB_NOSR
 
-module \$dlatchsr (EN, SET, CLR, D, Q);
+module op_dlatchsr (EN, SET, CLR, D, Q);
 
 parameter WIDTH = 2;
 parameter EN_POLARITY = 1'b1;
@@ -2220,7 +2220,7 @@ endmodule
 `endif
 // --------------------------------------------------------
 
-module \$fsm (CLK, ARST, CTRL_IN, CTRL_OUT);
+module op_fsm (CLK, ARST, CTRL_IN, CTRL_OUT);
 
 parameter NAME = "";
 
@@ -2314,7 +2314,7 @@ endmodule
 // --------------------------------------------------------
 `ifndef SIMLIB_NOMEM
 
-module \$memrd (CLK, EN, ADDR, DATA);
+module op_memrd (CLK, EN, ADDR, DATA);
 
 parameter MEMID = "";
 parameter ABITS = 8;
@@ -2337,7 +2337,7 @@ end
 
 endmodule
 
-module \$memrd_v2 (CLK, EN, ARST, SRST, ADDR, DATA);
+module op_memrd_v2 (CLK, EN, ARST, SRST, ADDR, DATA);
 
 parameter MEMID = "";
 parameter ABITS = 8;
@@ -2367,7 +2367,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$memwr (CLK, EN, ADDR, DATA);
+module op_memwr (CLK, EN, ADDR, DATA);
 
 parameter MEMID = "";
 parameter ABITS = 8;
@@ -2391,7 +2391,7 @@ end
 
 endmodule
 
-module \$memwr_v2 (CLK, EN, ADDR, DATA);
+module op_memwr_v2 (CLK, EN, ADDR, DATA);
 
 parameter MEMID = "";
 parameter ABITS = 8;
@@ -2418,7 +2418,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$meminit (ADDR, DATA);
+module op_meminit (ADDR, DATA);
 
 parameter MEMID = "";
 parameter ABITS = 8;
@@ -2441,7 +2441,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$meminit_v2 (ADDR, DATA, EN);
+module op_meminit_v2 (ADDR, DATA, EN);
 
 parameter MEMID = "";
 parameter ABITS = 8;
@@ -2465,7 +2465,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$mem (RD_CLK, RD_EN, RD_ADDR, RD_DATA, WR_CLK, WR_EN, WR_ADDR, WR_DATA);
+module op_mem (RD_CLK, RD_EN, RD_ADDR, RD_DATA, WR_CLK, WR_EN, WR_ADDR, WR_DATA);
 
 parameter MEMID = "";
 parameter signed SIZE = 4;
@@ -2552,7 +2552,7 @@ end
 
 endmodule
 
-module \$mem_v2 (RD_CLK, RD_EN, RD_ARST, RD_SRST, RD_ADDR, RD_DATA, WR_CLK, WR_EN, WR_ADDR, WR_DATA);
+module op_mem_v2 (RD_CLK, RD_EN, RD_ARST, RD_SRST, RD_ADDR, RD_DATA, WR_CLK, WR_EN, WR_ADDR, WR_DATA);
 
 parameter MEMID = "";
 parameter signed SIZE = 4;
@@ -2672,7 +2672,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$set_tag (A, SET, CLR, Y);
+module op_set_tag (A, SET, CLR, Y);
 
 parameter TAG = "";
 parameter WIDTH = 2;
@@ -2688,7 +2688,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$get_tag (A, Y);
+module op_get_tag (A, Y);
 
 parameter TAG = "";
 parameter WIDTH = 2;
@@ -2702,7 +2702,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$overwrite_tag (A, SET, CLR);
+module op_overwrite_tag (A, SET, CLR);
 
 parameter TAG = "";
 parameter WIDTH = 2;
@@ -2715,7 +2715,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$original_tag (A, Y);
+module op_original_tag (A, Y);
 
 parameter TAG = "";
 parameter WIDTH = 2;
@@ -2729,7 +2729,7 @@ endmodule
 
 // --------------------------------------------------------
 
-module \$future_ff (A, Y);
+module op_future_ff (A, Y);
 
 parameter WIDTH = 2;
 
