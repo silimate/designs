@@ -42,8 +42,8 @@
 module \$not (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -70,8 +70,8 @@ endmodule
 module \$pos (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -97,8 +97,8 @@ endmodule
 module \$neg (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -125,9 +125,9 @@ module \$and (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -155,9 +155,9 @@ module \$or (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -185,9 +185,9 @@ module \$xor (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -215,9 +215,9 @@ module \$xnor (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -244,8 +244,8 @@ endmodule
 module \$reduce_and (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -271,8 +271,8 @@ endmodule
 module \$reduce_or (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -298,8 +298,8 @@ endmodule
 module \$reduce_xor (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -325,8 +325,8 @@ endmodule
 module \$reduce_xnor (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -353,8 +353,8 @@ endmodule
 module \$reduce_bool (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -375,9 +375,9 @@ module \$shl (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -399,9 +399,9 @@ module \$shr (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -423,9 +423,9 @@ module \$sshl (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -447,9 +447,9 @@ module \$sshr (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -471,9 +471,9 @@ module \$shift (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -503,9 +503,9 @@ module \$shiftx (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -643,9 +643,9 @@ module \$lt (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -667,9 +667,9 @@ module \$le (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -691,9 +691,9 @@ module \$eq (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -715,9 +715,9 @@ module \$ne (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -739,9 +739,9 @@ module \$eqx (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -763,9 +763,9 @@ module \$nex (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -787,9 +787,9 @@ module \$ge (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -811,9 +811,9 @@ module \$gt (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -835,9 +835,9 @@ module \$add (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -859,9 +859,9 @@ module \$sub (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -883,9 +883,9 @@ module \$mul (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -905,9 +905,9 @@ endmodule
 
 module \$macc (A, B, Y);
 
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 parameter CONFIG = 4'b0000;
 parameter CONFIG_WIDTH = 4;
 
@@ -1015,9 +1015,9 @@ module \$div (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -1047,9 +1047,9 @@ module \$mod (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -1077,9 +1077,9 @@ module \$divfloor (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -1116,9 +1116,9 @@ module \$modfloor (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -1149,9 +1149,9 @@ module \$pow (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -1177,8 +1177,8 @@ endmodule
 module \$logic_not (A, Y);
 
 parameter A_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -1199,9 +1199,9 @@ module \$logic_and (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -1223,9 +1223,9 @@ module \$logic_or (A, B, Y);
 
 parameter A_SIGNED = 0;
 parameter B_SIGNED = 0;
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -1246,8 +1246,8 @@ endmodule
 module \$slice (A, Y);
 
 parameter OFFSET = 0;
-parameter A_WIDTH = 0;
-parameter Y_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter Y_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 output [Y_WIDTH-1:0] Y;
@@ -1260,8 +1260,8 @@ endmodule
 
 module \$concat (A, B, Y);
 
-parameter A_WIDTH = 0;
-parameter B_WIDTH = 0;
+parameter A_WIDTH = 2;
+parameter B_WIDTH = 2;
 
 input [A_WIDTH-1:0] A;
 input [B_WIDTH-1:0] B;
@@ -1275,7 +1275,7 @@ endmodule
 
 module \$mux (A, B, S, Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A, B;
 input S;
@@ -1289,8 +1289,8 @@ endmodule
 
 module \$bmux (A, S, Y);
 
-parameter WIDTH = 0;
-parameter S_WIDTH = 0;
+parameter WIDTH = 2;
+parameter S_WIDTH = 2;
 
 input [(WIDTH << S_WIDTH)-1:0] A;
 input [S_WIDTH-1:0] S;
@@ -1316,8 +1316,8 @@ endmodule
 
 module \$pmux (A, B, S, Y);
 
-parameter WIDTH = 0;
-parameter S_WIDTH = 0;
+parameter WIDTH = 2;
+parameter S_WIDTH = 2;
 
 input [WIDTH-1:0] A;
 input [WIDTH*S_WIDTH-1:0] B;
@@ -1371,7 +1371,7 @@ endmodule
 
 module \$lut (A, Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter LUT = 0;
 
 input [WIDTH-1:0] A;
@@ -1386,7 +1386,7 @@ endmodule
 
 module \$sop (A, Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter DEPTH = 0;
 parameter TABLE = 0;
 
@@ -1414,7 +1414,7 @@ endmodule
 
 module \$tribuf (A, EN, Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A;
 input EN;
@@ -1603,7 +1603,7 @@ endmodule
 
 module \$bweqx (A, B, Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A, B;
 output [WIDTH-1:0] Y;
@@ -1621,7 +1621,7 @@ endmodule
 
 module \$bwmux (A, B, S, Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A, B;
 input [WIDTH-1:0] S;
@@ -1715,7 +1715,7 @@ endmodule
 
 module \$anyconst (Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 output [WIDTH-1:0] Y;
 
@@ -1727,7 +1727,7 @@ endmodule
 
 module \$anyseq (Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 output [WIDTH-1:0] Y;
 
@@ -1742,7 +1742,7 @@ endmodule
 `endif
 module \$anyinit (D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] D;
 output reg [WIDTH-1:0] Q;
@@ -1759,7 +1759,7 @@ endmodule
 
 module \$allconst (Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 output [WIDTH-1:0] Y;
 
@@ -1771,7 +1771,7 @@ endmodule
 
 module \$allseq (Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 output [WIDTH-1:0] Y;
 
@@ -1804,11 +1804,11 @@ endmodule
 module \$print (EN, TRG, ARGS);
 
 parameter FORMAT = "";
-parameter ARGS_WIDTH = 0;
+parameter ARGS_WIDTH = 2;
 parameter PRIORITY = 0;
 parameter TRG_ENABLE = 1;
 
-parameter TRG_WIDTH = 0;
+parameter TRG_WIDTH = 2;
 parameter TRG_POLARITY = 0;
 
 input EN;
@@ -1822,7 +1822,7 @@ endmodule
 
 module \$sr (SET, CLR, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter SET_POLARITY = 1'b1;
 parameter CLR_POLARITY = 1'b1;
 
@@ -1854,7 +1854,7 @@ endmodule
 
 module \$ff (D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] D;
 output reg [WIDTH-1:0] Q;
@@ -1870,7 +1870,7 @@ endmodule
 
 module \$dff (CLK, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 
 input CLK;
@@ -1888,7 +1888,7 @@ endmodule
 
 module \$dffe (CLK, EN, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter EN_POLARITY = 1'b1;
 
@@ -1908,7 +1908,7 @@ endmodule
 
 module \$dffsr (CLK, SET, CLR, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter SET_POLARITY = 1'b1;
 parameter CLR_POLARITY = 1'b1;
@@ -1940,7 +1940,7 @@ endmodule
 
 module \$dffsre (CLK, SET, CLR, EN, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter SET_POLARITY = 1'b1;
 parameter CLR_POLARITY = 1'b1;
@@ -1974,7 +1974,7 @@ endmodule
 
 module \$adff (CLK, ARST, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter ARST_POLARITY = 1'b1;
 parameter ARST_VALUE = 0;
@@ -1998,7 +1998,7 @@ endmodule
 
 module \$aldff (CLK, ALOAD, AD, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter ALOAD_POLARITY = 1'b1;
 
@@ -2022,7 +2022,7 @@ endmodule
 
 module \$sdff (CLK, SRST, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter SRST_POLARITY = 1'b1;
 parameter SRST_VALUE = 0;
@@ -2046,7 +2046,7 @@ endmodule
 
 module \$adffe (CLK, ARST, EN, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter EN_POLARITY = 1'b1;
 parameter ARST_POLARITY = 1'b1;
@@ -2071,7 +2071,7 @@ endmodule
 
 module \$aldffe (CLK, ALOAD, AD, EN, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter EN_POLARITY = 1'b1;
 parameter ALOAD_POLARITY = 1'b1;
@@ -2096,7 +2096,7 @@ endmodule
 
 module \$sdffe (CLK, SRST, EN, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter EN_POLARITY = 1'b1;
 parameter SRST_POLARITY = 1'b1;
@@ -2121,7 +2121,7 @@ endmodule
 
 module \$sdffce (CLK, SRST, EN, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter CLK_POLARITY = 1'b1;
 parameter EN_POLARITY = 1'b1;
 parameter SRST_POLARITY = 1'b1;
@@ -2148,7 +2148,7 @@ endmodule
 
 module \$dlatch (EN, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter EN_POLARITY = 1'b1;
 
 input EN;
@@ -2166,7 +2166,7 @@ endmodule
 
 module \$adlatch (EN, ARST, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter EN_POLARITY = 1'b1;
 parameter ARST_POLARITY = 1'b1;
 parameter ARST_VALUE = 0;
@@ -2189,7 +2189,7 @@ endmodule
 
 module \$dlatchsr (EN, SET, CLR, D, Q);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 parameter EN_POLARITY = 1'b1;
 parameter SET_POLARITY = 1'b1;
 parameter CLR_POLARITY = 1'b1;
@@ -2675,7 +2675,7 @@ endmodule
 module \$set_tag (A, SET, CLR, Y);
 
 parameter TAG = "";
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A;
 input [WIDTH-1:0] SET;
@@ -2691,7 +2691,7 @@ endmodule
 module \$get_tag (A, Y);
 
 parameter TAG = "";
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A;
 output [WIDTH-1:0] Y;
@@ -2705,7 +2705,7 @@ endmodule
 module \$overwrite_tag (A, SET, CLR);
 
 parameter TAG = "";
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A;
 input [WIDTH-1:0] SET;
@@ -2718,7 +2718,7 @@ endmodule
 module \$original_tag (A, Y);
 
 parameter TAG = "";
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A;
 output [WIDTH-1:0] Y;
@@ -2731,7 +2731,7 @@ endmodule
 
 module \$future_ff (A, Y);
 
-parameter WIDTH = 0;
+parameter WIDTH = 2;
 
 input [WIDTH-1:0] A;
 output [WIDTH-1:0] Y;
