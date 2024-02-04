@@ -1,19 +1,13 @@
-# Utilities
-proc ldiff {a b} {
-  lmap elem $a {
-    expr {[lsearch -exact $b $elem] > -1 ? [continue] : $elem}
-  }
+# Create clocks (virtual if none are found)
+set clks [get_ports -nocase *clk*]
+if {[llength $clks] == 0} {
+  create_clock -name clk -period $::env(clock_period)
+} else {
+  create_clock -name clk -period $::env(clock_period) $clks
 }
 
-# Find clocks and resets
-set clks [get_ports -nocase *clk*]
-set inputs_no_clks [all_inputs -no_clocks]
-
-# Create clocks
-create_clock -name clk -period $::env(clock_period) $clks
-
 # Set input delays
-set_input_delay -clock clk 0 $inputs_no_clks
+set_input_delay -clock clk 0 [all_inputs -no_clocks]
 
 # Set output delays
 set_output_delay -clock clk 0 [all_outputs]
