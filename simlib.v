@@ -2572,7 +2572,7 @@ parameter RD_ARST_VALUE = 0;
 parameter RD_SRST_VALUE = 0;
 parameter RD_INIT_VALUE = 0;
 
-parameter signed WR_PORTS = 1;
+parameter signed WR_PORTS = 0;
 parameter WR_CLK_ENABLE = 1;
 parameter WR_CLK_POLARITY = 1;
 parameter WR_PRIORITY_MASK = 0;
