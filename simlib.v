@@ -2559,7 +2559,7 @@ parameter signed SIZE = 4;
 parameter signed OFFSET = 0;
 parameter signed ABITS = 2;
 parameter signed WIDTH = 8;
-parameter signed INIT = x;
+parameter signed INIT = 0;
 
 parameter signed RD_PORTS = 1;
 parameter RD_CLK_ENABLE = 1;
