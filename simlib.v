@@ -2559,24 +2559,24 @@ parameter signed SIZE = 4;
 parameter signed OFFSET = 0;
 parameter signed ABITS = 2;
 parameter signed WIDTH = 8;
-parameter signed INIT = 1'bx;
+parameter signed INIT = x;
 
 parameter signed RD_PORTS = 1;
-parameter RD_CLK_ENABLE = 1'b1;
-parameter RD_CLK_POLARITY = 1'b1;
-parameter RD_TRANSPARENCY_MASK = 1'b0;
-parameter RD_COLLISION_X_MASK = 1'b0;
-parameter RD_WIDE_CONTINUATION = 1'b0;
-parameter RD_CE_OVER_SRST = 1'b0;
-parameter RD_ARST_VALUE = 1'b0;
-parameter RD_SRST_VALUE = 1'b0;
-parameter RD_INIT_VALUE = 1'b0;
+parameter RD_CLK_ENABLE = 1;
+parameter RD_CLK_POLARITY = 1;
+parameter RD_TRANSPARENCY_MASK = 0;
+parameter RD_COLLISION_X_MASK = 0;
+parameter RD_WIDE_CONTINUATION = 0;
+parameter RD_CE_OVER_SRST = 0;
+parameter RD_ARST_VALUE = 0;
+parameter RD_SRST_VALUE = 0;
+parameter RD_INIT_VALUE = 0;
 
 parameter signed WR_PORTS = 1;
-parameter WR_CLK_ENABLE = 1'b1;
-parameter WR_CLK_POLARITY = 1'b1;
-parameter WR_PRIORITY_MASK = 1'b0;
-parameter WR_WIDE_CONTINUATION = 1'b0;
+parameter WR_CLK_ENABLE = 1;
+parameter WR_CLK_POLARITY = 1;
+parameter WR_PRIORITY_MASK = 0;
+parameter WR_WIDE_CONTINUATION = 0;
 
 input [RD_PORTS-1:0] RD_CLK;
 input [RD_PORTS-1:0] RD_EN;
