@@ -2480,7 +2480,7 @@ parameter RD_CLK_POLARITY = 1'b1;
 parameter RD_TRANSPARENT = 1'b1;
 
 parameter signed WR_PORTS = 1;
-parameter WR_CLK_ENABLE = 1'b1;
+parameter WR_CLK_ENABLE = 1'b0;
 parameter WR_CLK_POLARITY = 1'b1;
 
 input [RD_PORTS-1:0] RD_CLK;
