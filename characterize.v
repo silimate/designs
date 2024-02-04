@@ -1920,134 +1920,6 @@ module adlatch_slow_1_0_1_1(ARST, D, EN, Q);
     else if (EN) Q = D;
 endmodule
 
-module aldff_fast_0_0_1(AD, ALOAD, CLK, D, Q);
-  input AD;
-  wire AD;
-  input ALOAD;
-  wire ALOAD;
-  input CLK;
-  wire CLK;
-  input D;
-  wire D;
-  output Q;
-  reg Q;
-  always @(negedge CLK, negedge ALOAD)
-    if (!ALOAD) Q <= AD;
-    else Q <= D;
-endmodule
-
-module aldff_fast_0_1_1(AD, ALOAD, CLK, D, Q);
-  input AD;
-  wire AD;
-  input ALOAD;
-  wire ALOAD;
-  input CLK;
-  wire CLK;
-  input D;
-  wire D;
-  output Q;
-  reg Q;
-  always @(posedge CLK, negedge ALOAD)
-    if (!ALOAD) Q <= AD;
-    else Q <= D;
-endmodule
-
-module aldff_fast_1_0_1(AD, ALOAD, CLK, D, Q);
-  input AD;
-  wire AD;
-  input ALOAD;
-  wire ALOAD;
-  input CLK;
-  wire CLK;
-  input D;
-  wire D;
-  output Q;
-  reg Q;
-  always @(negedge CLK, posedge ALOAD)
-    if (ALOAD) Q <= AD;
-    else Q <= D;
-endmodule
-
-module aldff_fast_1_1_1(AD, ALOAD, CLK, D, Q);
-  input AD;
-  wire AD;
-  input ALOAD;
-  wire ALOAD;
-  input CLK;
-  wire CLK;
-  input D;
-  wire D;
-  output Q;
-  reg Q;
-  always @(posedge CLK, posedge ALOAD)
-    if (ALOAD) Q <= AD;
-    else Q <= D;
-endmodule
-
-module aldff_slow_0_0_1(AD, ALOAD, CLK, D, Q);
-  input AD;
-  wire AD;
-  input ALOAD;
-  wire ALOAD;
-  input CLK;
-  wire CLK;
-  input D;
-  wire D;
-  output Q;
-  reg Q;
-  always @(negedge CLK, negedge ALOAD)
-    if (!ALOAD) Q <= AD;
-    else Q <= D;
-endmodule
-
-module aldff_slow_0_1_1(AD, ALOAD, CLK, D, Q);
-  input AD;
-  wire AD;
-  input ALOAD;
-  wire ALOAD;
-  input CLK;
-  wire CLK;
-  input D;
-  wire D;
-  output Q;
-  reg Q;
-  always @(posedge CLK, negedge ALOAD)
-    if (!ALOAD) Q <= AD;
-    else Q <= D;
-endmodule
-
-module aldff_slow_1_0_1(AD, ALOAD, CLK, D, Q);
-  input AD;
-  wire AD;
-  input ALOAD;
-  wire ALOAD;
-  input CLK;
-  wire CLK;
-  input D;
-  wire D;
-  output Q;
-  reg Q;
-  always @(negedge CLK, posedge ALOAD)
-    if (ALOAD) Q <= AD;
-    else Q <= D;
-endmodule
-
-module aldff_slow_1_1_1(AD, ALOAD, CLK, D, Q);
-  input AD;
-  wire AD;
-  input ALOAD;
-  wire ALOAD;
-  input CLK;
-  wire CLK;
-  input D;
-  wire D;
-  output Q;
-  reg Q;
-  always @(posedge CLK, posedge ALOAD)
-    if (ALOAD) Q <= AD;
-    else Q <= D;
-endmodule
-
 module and_fast_0_1_0_1_1(A, B, Y);
   input A;
   wire A;
@@ -2501,26 +2373,24 @@ module characterize(not_slow_0_1_1_A, not_slow_0_1_1_Y, not_slow_1_1_1_A, not_sl
 , adff_fast_1_0_1_1_D, adff_fast_1_0_1_1_Q, adffe_slow_0_0_0_0_1_ARST, adffe_slow_0_0_0_0_1_CLK, adffe_slow_0_0_0_0_1_D, adffe_slow_0_0_0_0_1_EN, adffe_slow_0_0_0_0_1_Q, adffe_slow_1_0_0_0_1_ARST, adffe_slow_1_0_0_0_1_CLK, adffe_slow_1_0_0_0_1_D, adffe_slow_1_0_0_0_1_EN, adffe_slow_1_0_0_0_1_Q, adffe_slow_0_0_0_1_1_ARST, adffe_slow_0_0_0_1_1_CLK, adffe_slow_0_0_0_1_1_D, adffe_slow_0_0_0_1_1_EN, adffe_slow_0_0_0_1_1_Q, adffe_slow_1_0_0_1_1_ARST, adffe_slow_1_0_0_1_1_CLK, adffe_slow_1_0_0_1_1_D, adffe_slow_1_0_0_1_1_EN
 , adffe_slow_1_0_0_1_1_Q, adffe_slow_0_0_1_0_1_ARST, adffe_slow_0_0_1_0_1_CLK, adffe_slow_0_0_1_0_1_D, adffe_slow_0_0_1_0_1_EN, adffe_slow_0_0_1_0_1_Q, adffe_slow_1_0_1_0_1_ARST, adffe_slow_1_0_1_0_1_CLK, adffe_slow_1_0_1_0_1_D, adffe_slow_1_0_1_0_1_EN, adffe_slow_1_0_1_0_1_Q, adffe_slow_0_0_1_1_1_ARST, adffe_slow_0_0_1_1_1_CLK, adffe_slow_0_0_1_1_1_D, adffe_slow_0_0_1_1_1_EN, adffe_slow_0_0_1_1_1_Q, adffe_slow_1_0_1_1_1_ARST, adffe_slow_1_0_1_1_1_CLK, adffe_slow_1_0_1_1_1_D, adffe_slow_1_0_1_1_1_EN, adffe_slow_1_0_1_1_1_Q
 , adffe_fast_0_0_0_0_1_ARST, adffe_fast_0_0_0_0_1_CLK, adffe_fast_0_0_0_0_1_D, adffe_fast_0_0_0_0_1_EN, adffe_fast_0_0_0_0_1_Q, adffe_fast_1_0_0_0_1_ARST, adffe_fast_1_0_0_0_1_CLK, adffe_fast_1_0_0_0_1_D, adffe_fast_1_0_0_0_1_EN, adffe_fast_1_0_0_0_1_Q, adffe_fast_0_0_0_1_1_ARST, adffe_fast_0_0_0_1_1_CLK, adffe_fast_0_0_0_1_1_D, adffe_fast_0_0_0_1_1_EN, adffe_fast_0_0_0_1_1_Q, adffe_fast_1_0_0_1_1_ARST, adffe_fast_1_0_0_1_1_CLK, adffe_fast_1_0_0_1_1_D, adffe_fast_1_0_0_1_1_EN, adffe_fast_1_0_0_1_1_Q, adffe_fast_0_0_1_0_1_ARST
-, adffe_fast_0_0_1_0_1_CLK, adffe_fast_0_0_1_0_1_D, adffe_fast_0_0_1_0_1_EN, adffe_fast_0_0_1_0_1_Q, adffe_fast_1_0_1_0_1_ARST, adffe_fast_1_0_1_0_1_CLK, adffe_fast_1_0_1_0_1_D, adffe_fast_1_0_1_0_1_EN, adffe_fast_1_0_1_0_1_Q, adffe_fast_0_0_1_1_1_ARST, adffe_fast_0_0_1_1_1_CLK, adffe_fast_0_0_1_1_1_D, adffe_fast_0_0_1_1_1_EN, adffe_fast_0_0_1_1_1_Q, adffe_fast_1_0_1_1_1_ARST, adffe_fast_1_0_1_1_1_CLK, adffe_fast_1_0_1_1_1_D, adffe_fast_1_0_1_1_1_EN, adffe_fast_1_0_1_1_1_Q, aldff_slow_0_0_1_AD, aldff_slow_0_0_1_ALOAD
-, aldff_slow_0_0_1_CLK, aldff_slow_0_0_1_D, aldff_slow_0_0_1_Q, aldff_slow_1_0_1_AD, aldff_slow_1_0_1_ALOAD, aldff_slow_1_0_1_CLK, aldff_slow_1_0_1_D, aldff_slow_1_0_1_Q, aldff_slow_0_1_1_AD, aldff_slow_0_1_1_ALOAD, aldff_slow_0_1_1_CLK, aldff_slow_0_1_1_D, aldff_slow_0_1_1_Q, aldff_slow_1_1_1_AD, aldff_slow_1_1_1_ALOAD, aldff_slow_1_1_1_CLK, aldff_slow_1_1_1_D, aldff_slow_1_1_1_Q, aldff_fast_0_0_1_AD, aldff_fast_0_0_1_ALOAD, aldff_fast_0_0_1_CLK
-, aldff_fast_0_0_1_D, aldff_fast_0_0_1_Q, aldff_fast_1_0_1_AD, aldff_fast_1_0_1_ALOAD, aldff_fast_1_0_1_CLK, aldff_fast_1_0_1_D, aldff_fast_1_0_1_Q, aldff_fast_0_1_1_AD, aldff_fast_0_1_1_ALOAD, aldff_fast_0_1_1_CLK, aldff_fast_0_1_1_D, aldff_fast_0_1_1_Q, aldff_fast_1_1_1_AD, aldff_fast_1_1_1_ALOAD, aldff_fast_1_1_1_CLK, aldff_fast_1_1_1_D, aldff_fast_1_1_1_Q, sdff_slow_0_0_0_1_CLK, sdff_slow_0_0_0_1_D, sdff_slow_0_0_0_1_SRST, sdff_slow_0_0_0_1_Q
-, sdff_slow_0_1_0_1_CLK, sdff_slow_0_1_0_1_D, sdff_slow_0_1_0_1_SRST, sdff_slow_0_1_0_1_Q, sdff_slow_1_0_0_1_CLK, sdff_slow_1_0_0_1_D, sdff_slow_1_0_0_1_SRST, sdff_slow_1_0_0_1_Q, sdff_slow_1_1_0_1_CLK, sdff_slow_1_1_0_1_D, sdff_slow_1_1_0_1_SRST, sdff_slow_1_1_0_1_Q, sdff_fast_0_0_0_1_CLK, sdff_fast_0_0_0_1_D, sdff_fast_0_0_0_1_SRST, sdff_fast_0_0_0_1_Q, sdff_fast_0_1_0_1_CLK, sdff_fast_0_1_0_1_D, sdff_fast_0_1_0_1_SRST, sdff_fast_0_1_0_1_Q, sdff_fast_1_0_0_1_CLK
-, sdff_fast_1_0_0_1_D, sdff_fast_1_0_0_1_SRST, sdff_fast_1_0_0_1_Q, sdff_fast_1_1_0_1_CLK, sdff_fast_1_1_0_1_D, sdff_fast_1_1_0_1_SRST, sdff_fast_1_1_0_1_Q, sdffe_slow_0_0_0_0_1_CLK, sdffe_slow_0_0_0_0_1_D, sdffe_slow_0_0_0_0_1_EN, sdffe_slow_0_0_0_0_1_SRST, sdffe_slow_0_0_0_0_1_Q, sdffe_slow_0_0_1_0_1_CLK, sdffe_slow_0_0_1_0_1_D, sdffe_slow_0_0_1_0_1_EN, sdffe_slow_0_0_1_0_1_SRST, sdffe_slow_0_0_1_0_1_Q, sdffe_slow_0_1_0_0_1_CLK, sdffe_slow_0_1_0_0_1_D, sdffe_slow_0_1_0_0_1_EN, sdffe_slow_0_1_0_0_1_SRST
-, sdffe_slow_0_1_0_0_1_Q, sdffe_slow_0_1_1_0_1_CLK, sdffe_slow_0_1_1_0_1_D, sdffe_slow_0_1_1_0_1_EN, sdffe_slow_0_1_1_0_1_SRST, sdffe_slow_0_1_1_0_1_Q, sdffe_slow_1_0_0_0_1_CLK, sdffe_slow_1_0_0_0_1_D, sdffe_slow_1_0_0_0_1_EN, sdffe_slow_1_0_0_0_1_SRST, sdffe_slow_1_0_0_0_1_Q, sdffe_slow_1_0_1_0_1_CLK, sdffe_slow_1_0_1_0_1_D, sdffe_slow_1_0_1_0_1_EN, sdffe_slow_1_0_1_0_1_SRST, sdffe_slow_1_0_1_0_1_Q, sdffe_slow_1_1_0_0_1_CLK, sdffe_slow_1_1_0_0_1_D, sdffe_slow_1_1_0_0_1_EN, sdffe_slow_1_1_0_0_1_SRST, sdffe_slow_1_1_0_0_1_Q
-, sdffe_slow_1_1_1_0_1_CLK, sdffe_slow_1_1_1_0_1_D, sdffe_slow_1_1_1_0_1_EN, sdffe_slow_1_1_1_0_1_SRST, sdffe_slow_1_1_1_0_1_Q, sdffe_fast_0_0_0_0_1_CLK, sdffe_fast_0_0_0_0_1_D, sdffe_fast_0_0_0_0_1_EN, sdffe_fast_0_0_0_0_1_SRST, sdffe_fast_0_0_0_0_1_Q, sdffe_fast_0_0_1_0_1_CLK, sdffe_fast_0_0_1_0_1_D, sdffe_fast_0_0_1_0_1_EN, sdffe_fast_0_0_1_0_1_SRST, sdffe_fast_0_0_1_0_1_Q, sdffe_fast_0_1_0_0_1_CLK, sdffe_fast_0_1_0_0_1_D, sdffe_fast_0_1_0_0_1_EN, sdffe_fast_0_1_0_0_1_SRST, sdffe_fast_0_1_0_0_1_Q, sdffe_fast_0_1_1_0_1_CLK
-, sdffe_fast_0_1_1_0_1_D, sdffe_fast_0_1_1_0_1_EN, sdffe_fast_0_1_1_0_1_SRST, sdffe_fast_0_1_1_0_1_Q, sdffe_fast_1_0_0_0_1_CLK, sdffe_fast_1_0_0_0_1_D, sdffe_fast_1_0_0_0_1_EN, sdffe_fast_1_0_0_0_1_SRST, sdffe_fast_1_0_0_0_1_Q, sdffe_fast_1_0_1_0_1_CLK, sdffe_fast_1_0_1_0_1_D, sdffe_fast_1_0_1_0_1_EN, sdffe_fast_1_0_1_0_1_SRST, sdffe_fast_1_0_1_0_1_Q, sdffe_fast_1_1_0_0_1_CLK, sdffe_fast_1_1_0_0_1_D, sdffe_fast_1_1_0_0_1_EN, sdffe_fast_1_1_0_0_1_SRST, sdffe_fast_1_1_0_0_1_Q, sdffe_fast_1_1_1_0_1_CLK, sdffe_fast_1_1_1_0_1_D
-, sdffe_fast_1_1_1_0_1_EN, sdffe_fast_1_1_1_0_1_SRST, sdffe_fast_1_1_1_0_1_Q, sdffce_slow_0_0_0_0_1_CLK, sdffce_slow_0_0_0_0_1_D, sdffce_slow_0_0_0_0_1_EN, sdffce_slow_0_0_0_0_1_SRST, sdffce_slow_0_0_0_0_1_Q, sdffce_slow_0_0_1_0_1_CLK, sdffce_slow_0_0_1_0_1_D, sdffce_slow_0_0_1_0_1_EN, sdffce_slow_0_0_1_0_1_SRST, sdffce_slow_0_0_1_0_1_Q, sdffce_slow_0_1_0_0_1_CLK, sdffce_slow_0_1_0_0_1_D, sdffce_slow_0_1_0_0_1_EN, sdffce_slow_0_1_0_0_1_SRST, sdffce_slow_0_1_0_0_1_Q, sdffce_slow_0_1_1_0_1_CLK, sdffce_slow_0_1_1_0_1_D, sdffce_slow_0_1_1_0_1_EN
-, sdffce_slow_0_1_1_0_1_SRST, sdffce_slow_0_1_1_0_1_Q, sdffce_slow_1_0_0_0_1_CLK, sdffce_slow_1_0_0_0_1_D, sdffce_slow_1_0_0_0_1_EN, sdffce_slow_1_0_0_0_1_SRST, sdffce_slow_1_0_0_0_1_Q, sdffce_slow_1_0_1_0_1_CLK, sdffce_slow_1_0_1_0_1_D, sdffce_slow_1_0_1_0_1_EN, sdffce_slow_1_0_1_0_1_SRST, sdffce_slow_1_0_1_0_1_Q, sdffce_slow_1_1_0_0_1_CLK, sdffce_slow_1_1_0_0_1_D, sdffce_slow_1_1_0_0_1_EN, sdffce_slow_1_1_0_0_1_SRST, sdffce_slow_1_1_0_0_1_Q, sdffce_slow_1_1_1_0_1_CLK, sdffce_slow_1_1_1_0_1_D, sdffce_slow_1_1_1_0_1_EN, sdffce_slow_1_1_1_0_1_SRST
-, sdffce_slow_1_1_1_0_1_Q, sdffce_fast_0_0_0_0_1_CLK, sdffce_fast_0_0_0_0_1_D, sdffce_fast_0_0_0_0_1_EN, sdffce_fast_0_0_0_0_1_SRST, sdffce_fast_0_0_0_0_1_Q, sdffce_fast_0_0_1_0_1_CLK, sdffce_fast_0_0_1_0_1_D, sdffce_fast_0_0_1_0_1_EN, sdffce_fast_0_0_1_0_1_SRST, sdffce_fast_0_0_1_0_1_Q, sdffce_fast_0_1_0_0_1_CLK, sdffce_fast_0_1_0_0_1_D, sdffce_fast_0_1_0_0_1_EN, sdffce_fast_0_1_0_0_1_SRST, sdffce_fast_0_1_0_0_1_Q, sdffce_fast_0_1_1_0_1_CLK, sdffce_fast_0_1_1_0_1_D, sdffce_fast_0_1_1_0_1_EN, sdffce_fast_0_1_1_0_1_SRST, sdffce_fast_0_1_1_0_1_Q
-, sdffce_fast_1_0_0_0_1_CLK, sdffce_fast_1_0_0_0_1_D, sdffce_fast_1_0_0_0_1_EN, sdffce_fast_1_0_0_0_1_SRST, sdffce_fast_1_0_0_0_1_Q, sdffce_fast_1_0_1_0_1_CLK, sdffce_fast_1_0_1_0_1_D, sdffce_fast_1_0_1_0_1_EN, sdffce_fast_1_0_1_0_1_SRST, sdffce_fast_1_0_1_0_1_Q, sdffce_fast_1_1_0_0_1_CLK, sdffce_fast_1_1_0_0_1_D, sdffce_fast_1_1_0_0_1_EN, sdffce_fast_1_1_0_0_1_SRST, sdffce_fast_1_1_0_0_1_Q, sdffce_fast_1_1_1_0_1_CLK, sdffce_fast_1_1_1_0_1_D, sdffce_fast_1_1_1_0_1_EN, sdffce_fast_1_1_1_0_1_SRST, sdffce_fast_1_1_1_0_1_Q, sr_slow_0_0_1_CLR
-, sr_slow_0_0_1_SET, sr_slow_0_0_1_Q, sr_slow_0_1_1_CLR, sr_slow_0_1_1_SET, sr_slow_0_1_1_Q, sr_slow_1_0_1_CLR, sr_slow_1_0_1_SET, sr_slow_1_0_1_Q, sr_slow_1_1_1_CLR, sr_slow_1_1_1_SET, sr_slow_1_1_1_Q, sr_fast_0_0_1_CLR, sr_fast_0_0_1_SET, sr_fast_0_0_1_Q, sr_fast_0_1_1_CLR, sr_fast_0_1_1_SET, sr_fast_0_1_1_Q, sr_fast_1_0_1_CLR, sr_fast_1_0_1_SET, sr_fast_1_0_1_Q, sr_fast_1_1_1_CLR
-, sr_fast_1_1_1_SET, sr_fast_1_1_1_Q, dlatch_slow_0_1_D, dlatch_slow_0_1_EN, dlatch_slow_0_1_Q, dlatch_slow_1_1_D, dlatch_slow_1_1_EN, dlatch_slow_1_1_Q, dlatch_fast_0_1_D, dlatch_fast_0_1_EN, dlatch_fast_0_1_Q, dlatch_fast_1_1_D, dlatch_fast_1_1_EN, dlatch_fast_1_1_Q, adlatch_slow_0_0_0_1_ARST, adlatch_slow_0_0_0_1_D, adlatch_slow_0_0_0_1_EN, adlatch_slow_0_0_0_1_Q, adlatch_slow_1_0_0_1_ARST, adlatch_slow_1_0_0_1_D, adlatch_slow_1_0_0_1_EN
-, adlatch_slow_1_0_0_1_Q, adlatch_slow_0_0_1_1_ARST, adlatch_slow_0_0_1_1_D, adlatch_slow_0_0_1_1_EN, adlatch_slow_0_0_1_1_Q, adlatch_slow_1_0_1_1_ARST, adlatch_slow_1_0_1_1_D, adlatch_slow_1_0_1_1_EN, adlatch_slow_1_0_1_1_Q, adlatch_fast_0_0_0_1_ARST, adlatch_fast_0_0_0_1_D, adlatch_fast_0_0_0_1_EN, adlatch_fast_0_0_0_1_Q, adlatch_fast_1_0_0_1_ARST, adlatch_fast_1_0_0_1_D, adlatch_fast_1_0_0_1_EN, adlatch_fast_1_0_0_1_Q, adlatch_fast_0_0_1_1_ARST, adlatch_fast_0_0_1_1_D, adlatch_fast_0_0_1_1_EN, adlatch_fast_0_0_1_1_Q
-, adlatch_fast_1_0_1_1_ARST, adlatch_fast_1_0_1_1_D, adlatch_fast_1_0_1_1_EN, adlatch_fast_1_0_1_1_Q, dlatchsr_slow_0_0_0_1_CLR, dlatchsr_slow_0_0_0_1_D, dlatchsr_slow_0_0_0_1_EN, dlatchsr_slow_0_0_0_1_SET, dlatchsr_slow_0_0_0_1_Q, dlatchsr_slow_0_0_1_1_CLR, dlatchsr_slow_0_0_1_1_D, dlatchsr_slow_0_0_1_1_EN, dlatchsr_slow_0_0_1_1_SET, dlatchsr_slow_0_0_1_1_Q, dlatchsr_slow_0_1_0_1_CLR, dlatchsr_slow_0_1_0_1_D, dlatchsr_slow_0_1_0_1_EN, dlatchsr_slow_0_1_0_1_SET, dlatchsr_slow_0_1_0_1_Q, dlatchsr_slow_0_1_1_1_CLR, dlatchsr_slow_0_1_1_1_D
-, dlatchsr_slow_0_1_1_1_EN, dlatchsr_slow_0_1_1_1_SET, dlatchsr_slow_0_1_1_1_Q, dlatchsr_slow_1_0_0_1_CLR, dlatchsr_slow_1_0_0_1_D, dlatchsr_slow_1_0_0_1_EN, dlatchsr_slow_1_0_0_1_SET, dlatchsr_slow_1_0_0_1_Q, dlatchsr_slow_1_0_1_1_CLR, dlatchsr_slow_1_0_1_1_D, dlatchsr_slow_1_0_1_1_EN, dlatchsr_slow_1_0_1_1_SET, dlatchsr_slow_1_0_1_1_Q, dlatchsr_slow_1_1_0_1_CLR, dlatchsr_slow_1_1_0_1_D, dlatchsr_slow_1_1_0_1_EN, dlatchsr_slow_1_1_0_1_SET, dlatchsr_slow_1_1_0_1_Q, dlatchsr_slow_1_1_1_1_CLR, dlatchsr_slow_1_1_1_1_D, dlatchsr_slow_1_1_1_1_EN
-, dlatchsr_slow_1_1_1_1_SET, dlatchsr_slow_1_1_1_1_Q, dlatchsr_fast_0_0_0_1_CLR, dlatchsr_fast_0_0_0_1_D, dlatchsr_fast_0_0_0_1_EN, dlatchsr_fast_0_0_0_1_SET, dlatchsr_fast_0_0_0_1_Q, dlatchsr_fast_0_0_1_1_CLR, dlatchsr_fast_0_0_1_1_D, dlatchsr_fast_0_0_1_1_EN, dlatchsr_fast_0_0_1_1_SET, dlatchsr_fast_0_0_1_1_Q, dlatchsr_fast_0_1_0_1_CLR, dlatchsr_fast_0_1_0_1_D, dlatchsr_fast_0_1_0_1_EN, dlatchsr_fast_0_1_0_1_SET, dlatchsr_fast_0_1_0_1_Q, dlatchsr_fast_0_1_1_1_CLR, dlatchsr_fast_0_1_1_1_D, dlatchsr_fast_0_1_1_1_EN, dlatchsr_fast_0_1_1_1_SET
-, dlatchsr_fast_0_1_1_1_Q, dlatchsr_fast_1_0_0_1_CLR, dlatchsr_fast_1_0_0_1_D, dlatchsr_fast_1_0_0_1_EN, dlatchsr_fast_1_0_0_1_SET, dlatchsr_fast_1_0_0_1_Q, dlatchsr_fast_1_0_1_1_CLR, dlatchsr_fast_1_0_1_1_D, dlatchsr_fast_1_0_1_1_EN, dlatchsr_fast_1_0_1_1_SET, dlatchsr_fast_1_0_1_1_Q, dlatchsr_fast_1_1_0_1_CLR, dlatchsr_fast_1_1_0_1_D, dlatchsr_fast_1_1_0_1_EN, dlatchsr_fast_1_1_0_1_SET, dlatchsr_fast_1_1_0_1_Q, dlatchsr_fast_1_1_1_1_CLR, dlatchsr_fast_1_1_1_1_D, dlatchsr_fast_1_1_1_1_EN, dlatchsr_fast_1_1_1_1_SET, dlatchsr_fast_1_1_1_1_Q
-);
+, adffe_fast_0_0_1_0_1_CLK, adffe_fast_0_0_1_0_1_D, adffe_fast_0_0_1_0_1_EN, adffe_fast_0_0_1_0_1_Q, adffe_fast_1_0_1_0_1_ARST, adffe_fast_1_0_1_0_1_CLK, adffe_fast_1_0_1_0_1_D, adffe_fast_1_0_1_0_1_EN, adffe_fast_1_0_1_0_1_Q, adffe_fast_0_0_1_1_1_ARST, adffe_fast_0_0_1_1_1_CLK, adffe_fast_0_0_1_1_1_D, adffe_fast_0_0_1_1_1_EN, adffe_fast_0_0_1_1_1_Q, adffe_fast_1_0_1_1_1_ARST, adffe_fast_1_0_1_1_1_CLK, adffe_fast_1_0_1_1_1_D, adffe_fast_1_0_1_1_1_EN, adffe_fast_1_0_1_1_1_Q, sdff_slow_0_0_0_1_CLK, sdff_slow_0_0_0_1_D
+, sdff_slow_0_0_0_1_SRST, sdff_slow_0_0_0_1_Q, sdff_slow_0_1_0_1_CLK, sdff_slow_0_1_0_1_D, sdff_slow_0_1_0_1_SRST, sdff_slow_0_1_0_1_Q, sdff_slow_1_0_0_1_CLK, sdff_slow_1_0_0_1_D, sdff_slow_1_0_0_1_SRST, sdff_slow_1_0_0_1_Q, sdff_slow_1_1_0_1_CLK, sdff_slow_1_1_0_1_D, sdff_slow_1_1_0_1_SRST, sdff_slow_1_1_0_1_Q, sdff_fast_0_0_0_1_CLK, sdff_fast_0_0_0_1_D, sdff_fast_0_0_0_1_SRST, sdff_fast_0_0_0_1_Q, sdff_fast_0_1_0_1_CLK, sdff_fast_0_1_0_1_D, sdff_fast_0_1_0_1_SRST
+, sdff_fast_0_1_0_1_Q, sdff_fast_1_0_0_1_CLK, sdff_fast_1_0_0_1_D, sdff_fast_1_0_0_1_SRST, sdff_fast_1_0_0_1_Q, sdff_fast_1_1_0_1_CLK, sdff_fast_1_1_0_1_D, sdff_fast_1_1_0_1_SRST, sdff_fast_1_1_0_1_Q, sdffe_slow_0_0_0_0_1_CLK, sdffe_slow_0_0_0_0_1_D, sdffe_slow_0_0_0_0_1_EN, sdffe_slow_0_0_0_0_1_SRST, sdffe_slow_0_0_0_0_1_Q, sdffe_slow_0_0_1_0_1_CLK, sdffe_slow_0_0_1_0_1_D, sdffe_slow_0_0_1_0_1_EN, sdffe_slow_0_0_1_0_1_SRST, sdffe_slow_0_0_1_0_1_Q, sdffe_slow_0_1_0_0_1_CLK, sdffe_slow_0_1_0_0_1_D
+, sdffe_slow_0_1_0_0_1_EN, sdffe_slow_0_1_0_0_1_SRST, sdffe_slow_0_1_0_0_1_Q, sdffe_slow_0_1_1_0_1_CLK, sdffe_slow_0_1_1_0_1_D, sdffe_slow_0_1_1_0_1_EN, sdffe_slow_0_1_1_0_1_SRST, sdffe_slow_0_1_1_0_1_Q, sdffe_slow_1_0_0_0_1_CLK, sdffe_slow_1_0_0_0_1_D, sdffe_slow_1_0_0_0_1_EN, sdffe_slow_1_0_0_0_1_SRST, sdffe_slow_1_0_0_0_1_Q, sdffe_slow_1_0_1_0_1_CLK, sdffe_slow_1_0_1_0_1_D, sdffe_slow_1_0_1_0_1_EN, sdffe_slow_1_0_1_0_1_SRST, sdffe_slow_1_0_1_0_1_Q, sdffe_slow_1_1_0_0_1_CLK, sdffe_slow_1_1_0_0_1_D, sdffe_slow_1_1_0_0_1_EN
+, sdffe_slow_1_1_0_0_1_SRST, sdffe_slow_1_1_0_0_1_Q, sdffe_slow_1_1_1_0_1_CLK, sdffe_slow_1_1_1_0_1_D, sdffe_slow_1_1_1_0_1_EN, sdffe_slow_1_1_1_0_1_SRST, sdffe_slow_1_1_1_0_1_Q, sdffe_fast_0_0_0_0_1_CLK, sdffe_fast_0_0_0_0_1_D, sdffe_fast_0_0_0_0_1_EN, sdffe_fast_0_0_0_0_1_SRST, sdffe_fast_0_0_0_0_1_Q, sdffe_fast_0_0_1_0_1_CLK, sdffe_fast_0_0_1_0_1_D, sdffe_fast_0_0_1_0_1_EN, sdffe_fast_0_0_1_0_1_SRST, sdffe_fast_0_0_1_0_1_Q, sdffe_fast_0_1_0_0_1_CLK, sdffe_fast_0_1_0_0_1_D, sdffe_fast_0_1_0_0_1_EN, sdffe_fast_0_1_0_0_1_SRST
+, sdffe_fast_0_1_0_0_1_Q, sdffe_fast_0_1_1_0_1_CLK, sdffe_fast_0_1_1_0_1_D, sdffe_fast_0_1_1_0_1_EN, sdffe_fast_0_1_1_0_1_SRST, sdffe_fast_0_1_1_0_1_Q, sdffe_fast_1_0_0_0_1_CLK, sdffe_fast_1_0_0_0_1_D, sdffe_fast_1_0_0_0_1_EN, sdffe_fast_1_0_0_0_1_SRST, sdffe_fast_1_0_0_0_1_Q, sdffe_fast_1_0_1_0_1_CLK, sdffe_fast_1_0_1_0_1_D, sdffe_fast_1_0_1_0_1_EN, sdffe_fast_1_0_1_0_1_SRST, sdffe_fast_1_0_1_0_1_Q, sdffe_fast_1_1_0_0_1_CLK, sdffe_fast_1_1_0_0_1_D, sdffe_fast_1_1_0_0_1_EN, sdffe_fast_1_1_0_0_1_SRST, sdffe_fast_1_1_0_0_1_Q
+, sdffe_fast_1_1_1_0_1_CLK, sdffe_fast_1_1_1_0_1_D, sdffe_fast_1_1_1_0_1_EN, sdffe_fast_1_1_1_0_1_SRST, sdffe_fast_1_1_1_0_1_Q, sdffce_slow_0_0_0_0_1_CLK, sdffce_slow_0_0_0_0_1_D, sdffce_slow_0_0_0_0_1_EN, sdffce_slow_0_0_0_0_1_SRST, sdffce_slow_0_0_0_0_1_Q, sdffce_slow_0_0_1_0_1_CLK, sdffce_slow_0_0_1_0_1_D, sdffce_slow_0_0_1_0_1_EN, sdffce_slow_0_0_1_0_1_SRST, sdffce_slow_0_0_1_0_1_Q, sdffce_slow_0_1_0_0_1_CLK, sdffce_slow_0_1_0_0_1_D, sdffce_slow_0_1_0_0_1_EN, sdffce_slow_0_1_0_0_1_SRST, sdffce_slow_0_1_0_0_1_Q, sdffce_slow_0_1_1_0_1_CLK
+, sdffce_slow_0_1_1_0_1_D, sdffce_slow_0_1_1_0_1_EN, sdffce_slow_0_1_1_0_1_SRST, sdffce_slow_0_1_1_0_1_Q, sdffce_slow_1_0_0_0_1_CLK, sdffce_slow_1_0_0_0_1_D, sdffce_slow_1_0_0_0_1_EN, sdffce_slow_1_0_0_0_1_SRST, sdffce_slow_1_0_0_0_1_Q, sdffce_slow_1_0_1_0_1_CLK, sdffce_slow_1_0_1_0_1_D, sdffce_slow_1_0_1_0_1_EN, sdffce_slow_1_0_1_0_1_SRST, sdffce_slow_1_0_1_0_1_Q, sdffce_slow_1_1_0_0_1_CLK, sdffce_slow_1_1_0_0_1_D, sdffce_slow_1_1_0_0_1_EN, sdffce_slow_1_1_0_0_1_SRST, sdffce_slow_1_1_0_0_1_Q, sdffce_slow_1_1_1_0_1_CLK, sdffce_slow_1_1_1_0_1_D
+, sdffce_slow_1_1_1_0_1_EN, sdffce_slow_1_1_1_0_1_SRST, sdffce_slow_1_1_1_0_1_Q, sdffce_fast_0_0_0_0_1_CLK, sdffce_fast_0_0_0_0_1_D, sdffce_fast_0_0_0_0_1_EN, sdffce_fast_0_0_0_0_1_SRST, sdffce_fast_0_0_0_0_1_Q, sdffce_fast_0_0_1_0_1_CLK, sdffce_fast_0_0_1_0_1_D, sdffce_fast_0_0_1_0_1_EN, sdffce_fast_0_0_1_0_1_SRST, sdffce_fast_0_0_1_0_1_Q, sdffce_fast_0_1_0_0_1_CLK, sdffce_fast_0_1_0_0_1_D, sdffce_fast_0_1_0_0_1_EN, sdffce_fast_0_1_0_0_1_SRST, sdffce_fast_0_1_0_0_1_Q, sdffce_fast_0_1_1_0_1_CLK, sdffce_fast_0_1_1_0_1_D, sdffce_fast_0_1_1_0_1_EN
+, sdffce_fast_0_1_1_0_1_SRST, sdffce_fast_0_1_1_0_1_Q, sdffce_fast_1_0_0_0_1_CLK, sdffce_fast_1_0_0_0_1_D, sdffce_fast_1_0_0_0_1_EN, sdffce_fast_1_0_0_0_1_SRST, sdffce_fast_1_0_0_0_1_Q, sdffce_fast_1_0_1_0_1_CLK, sdffce_fast_1_0_1_0_1_D, sdffce_fast_1_0_1_0_1_EN, sdffce_fast_1_0_1_0_1_SRST, sdffce_fast_1_0_1_0_1_Q, sdffce_fast_1_1_0_0_1_CLK, sdffce_fast_1_1_0_0_1_D, sdffce_fast_1_1_0_0_1_EN, sdffce_fast_1_1_0_0_1_SRST, sdffce_fast_1_1_0_0_1_Q, sdffce_fast_1_1_1_0_1_CLK, sdffce_fast_1_1_1_0_1_D, sdffce_fast_1_1_1_0_1_EN, sdffce_fast_1_1_1_0_1_SRST
+, sdffce_fast_1_1_1_0_1_Q, sr_slow_0_0_1_CLR, sr_slow_0_0_1_SET, sr_slow_0_0_1_Q, sr_slow_0_1_1_CLR, sr_slow_0_1_1_SET, sr_slow_0_1_1_Q, sr_slow_1_0_1_CLR, sr_slow_1_0_1_SET, sr_slow_1_0_1_Q, sr_slow_1_1_1_CLR, sr_slow_1_1_1_SET, sr_slow_1_1_1_Q, sr_fast_0_0_1_CLR, sr_fast_0_0_1_SET, sr_fast_0_0_1_Q, sr_fast_0_1_1_CLR, sr_fast_0_1_1_SET, sr_fast_0_1_1_Q, sr_fast_1_0_1_CLR, sr_fast_1_0_1_SET
+, sr_fast_1_0_1_Q, sr_fast_1_1_1_CLR, sr_fast_1_1_1_SET, sr_fast_1_1_1_Q, dlatch_slow_0_1_D, dlatch_slow_0_1_EN, dlatch_slow_0_1_Q, dlatch_slow_1_1_D, dlatch_slow_1_1_EN, dlatch_slow_1_1_Q, dlatch_fast_0_1_D, dlatch_fast_0_1_EN, dlatch_fast_0_1_Q, dlatch_fast_1_1_D, dlatch_fast_1_1_EN, dlatch_fast_1_1_Q, adlatch_slow_0_0_0_1_ARST, adlatch_slow_0_0_0_1_D, adlatch_slow_0_0_0_1_EN, adlatch_slow_0_0_0_1_Q, adlatch_slow_1_0_0_1_ARST
+, adlatch_slow_1_0_0_1_D, adlatch_slow_1_0_0_1_EN, adlatch_slow_1_0_0_1_Q, adlatch_slow_0_0_1_1_ARST, adlatch_slow_0_0_1_1_D, adlatch_slow_0_0_1_1_EN, adlatch_slow_0_0_1_1_Q, adlatch_slow_1_0_1_1_ARST, adlatch_slow_1_0_1_1_D, adlatch_slow_1_0_1_1_EN, adlatch_slow_1_0_1_1_Q, adlatch_fast_0_0_0_1_ARST, adlatch_fast_0_0_0_1_D, adlatch_fast_0_0_0_1_EN, adlatch_fast_0_0_0_1_Q, adlatch_fast_1_0_0_1_ARST, adlatch_fast_1_0_0_1_D, adlatch_fast_1_0_0_1_EN, adlatch_fast_1_0_0_1_Q, adlatch_fast_0_0_1_1_ARST, adlatch_fast_0_0_1_1_D
+, adlatch_fast_0_0_1_1_EN, adlatch_fast_0_0_1_1_Q, adlatch_fast_1_0_1_1_ARST, adlatch_fast_1_0_1_1_D, adlatch_fast_1_0_1_1_EN, adlatch_fast_1_0_1_1_Q, dlatchsr_slow_0_0_0_1_CLR, dlatchsr_slow_0_0_0_1_D, dlatchsr_slow_0_0_0_1_EN, dlatchsr_slow_0_0_0_1_SET, dlatchsr_slow_0_0_0_1_Q, dlatchsr_slow_0_0_1_1_CLR, dlatchsr_slow_0_0_1_1_D, dlatchsr_slow_0_0_1_1_EN, dlatchsr_slow_0_0_1_1_SET, dlatchsr_slow_0_0_1_1_Q, dlatchsr_slow_0_1_0_1_CLR, dlatchsr_slow_0_1_0_1_D, dlatchsr_slow_0_1_0_1_EN, dlatchsr_slow_0_1_0_1_SET, dlatchsr_slow_0_1_0_1_Q
+, dlatchsr_slow_0_1_1_1_CLR, dlatchsr_slow_0_1_1_1_D, dlatchsr_slow_0_1_1_1_EN, dlatchsr_slow_0_1_1_1_SET, dlatchsr_slow_0_1_1_1_Q, dlatchsr_slow_1_0_0_1_CLR, dlatchsr_slow_1_0_0_1_D, dlatchsr_slow_1_0_0_1_EN, dlatchsr_slow_1_0_0_1_SET, dlatchsr_slow_1_0_0_1_Q, dlatchsr_slow_1_0_1_1_CLR, dlatchsr_slow_1_0_1_1_D, dlatchsr_slow_1_0_1_1_EN, dlatchsr_slow_1_0_1_1_SET, dlatchsr_slow_1_0_1_1_Q, dlatchsr_slow_1_1_0_1_CLR, dlatchsr_slow_1_1_0_1_D, dlatchsr_slow_1_1_0_1_EN, dlatchsr_slow_1_1_0_1_SET, dlatchsr_slow_1_1_0_1_Q, dlatchsr_slow_1_1_1_1_CLR
+, dlatchsr_slow_1_1_1_1_D, dlatchsr_slow_1_1_1_1_EN, dlatchsr_slow_1_1_1_1_SET, dlatchsr_slow_1_1_1_1_Q, dlatchsr_fast_0_0_0_1_CLR, dlatchsr_fast_0_0_0_1_D, dlatchsr_fast_0_0_0_1_EN, dlatchsr_fast_0_0_0_1_SET, dlatchsr_fast_0_0_0_1_Q, dlatchsr_fast_0_0_1_1_CLR, dlatchsr_fast_0_0_1_1_D, dlatchsr_fast_0_0_1_1_EN, dlatchsr_fast_0_0_1_1_SET, dlatchsr_fast_0_0_1_1_Q, dlatchsr_fast_0_1_0_1_CLR, dlatchsr_fast_0_1_0_1_D, dlatchsr_fast_0_1_0_1_EN, dlatchsr_fast_0_1_0_1_SET, dlatchsr_fast_0_1_0_1_Q, dlatchsr_fast_0_1_1_1_CLR, dlatchsr_fast_0_1_1_1_D
+, dlatchsr_fast_0_1_1_1_EN, dlatchsr_fast_0_1_1_1_SET, dlatchsr_fast_0_1_1_1_Q, dlatchsr_fast_1_0_0_1_CLR, dlatchsr_fast_1_0_0_1_D, dlatchsr_fast_1_0_0_1_EN, dlatchsr_fast_1_0_0_1_SET, dlatchsr_fast_1_0_0_1_Q, dlatchsr_fast_1_0_1_1_CLR, dlatchsr_fast_1_0_1_1_D, dlatchsr_fast_1_0_1_1_EN, dlatchsr_fast_1_0_1_1_SET, dlatchsr_fast_1_0_1_1_Q, dlatchsr_fast_1_1_0_1_CLR, dlatchsr_fast_1_1_0_1_D, dlatchsr_fast_1_1_0_1_EN, dlatchsr_fast_1_1_0_1_SET, dlatchsr_fast_1_1_0_1_Q, dlatchsr_fast_1_1_1_1_CLR, dlatchsr_fast_1_1_1_1_D, dlatchsr_fast_1_1_1_1_EN
+, dlatchsr_fast_1_1_1_1_SET, dlatchsr_fast_1_1_1_1_Q);
   input [127:0] add_fast_0_128_0_128_128_A;
   wire [127:0] add_fast_0_128_0_128_128_A;
   input [127:0] add_fast_0_128_0_128_128_B;
@@ -3673,86 +3543,6 @@ module characterize(not_slow_0_1_1_A, not_slow_0_1_1_Y, not_slow_1_1_1_A, not_sl
   wire adlatch_slow_1_0_1_1_EN;
   output adlatch_slow_1_0_1_1_Q;
   wire adlatch_slow_1_0_1_1_Q;
-  input aldff_fast_0_0_1_AD;
-  wire aldff_fast_0_0_1_AD;
-  input aldff_fast_0_0_1_ALOAD;
-  wire aldff_fast_0_0_1_ALOAD;
-  input aldff_fast_0_0_1_CLK;
-  wire aldff_fast_0_0_1_CLK;
-  input aldff_fast_0_0_1_D;
-  wire aldff_fast_0_0_1_D;
-  output aldff_fast_0_0_1_Q;
-  wire aldff_fast_0_0_1_Q;
-  input aldff_fast_0_1_1_AD;
-  wire aldff_fast_0_1_1_AD;
-  input aldff_fast_0_1_1_ALOAD;
-  wire aldff_fast_0_1_1_ALOAD;
-  input aldff_fast_0_1_1_CLK;
-  wire aldff_fast_0_1_1_CLK;
-  input aldff_fast_0_1_1_D;
-  wire aldff_fast_0_1_1_D;
-  output aldff_fast_0_1_1_Q;
-  wire aldff_fast_0_1_1_Q;
-  input aldff_fast_1_0_1_AD;
-  wire aldff_fast_1_0_1_AD;
-  input aldff_fast_1_0_1_ALOAD;
-  wire aldff_fast_1_0_1_ALOAD;
-  input aldff_fast_1_0_1_CLK;
-  wire aldff_fast_1_0_1_CLK;
-  input aldff_fast_1_0_1_D;
-  wire aldff_fast_1_0_1_D;
-  output aldff_fast_1_0_1_Q;
-  wire aldff_fast_1_0_1_Q;
-  input aldff_fast_1_1_1_AD;
-  wire aldff_fast_1_1_1_AD;
-  input aldff_fast_1_1_1_ALOAD;
-  wire aldff_fast_1_1_1_ALOAD;
-  input aldff_fast_1_1_1_CLK;
-  wire aldff_fast_1_1_1_CLK;
-  input aldff_fast_1_1_1_D;
-  wire aldff_fast_1_1_1_D;
-  output aldff_fast_1_1_1_Q;
-  wire aldff_fast_1_1_1_Q;
-  input aldff_slow_0_0_1_AD;
-  wire aldff_slow_0_0_1_AD;
-  input aldff_slow_0_0_1_ALOAD;
-  wire aldff_slow_0_0_1_ALOAD;
-  input aldff_slow_0_0_1_CLK;
-  wire aldff_slow_0_0_1_CLK;
-  input aldff_slow_0_0_1_D;
-  wire aldff_slow_0_0_1_D;
-  output aldff_slow_0_0_1_Q;
-  wire aldff_slow_0_0_1_Q;
-  input aldff_slow_0_1_1_AD;
-  wire aldff_slow_0_1_1_AD;
-  input aldff_slow_0_1_1_ALOAD;
-  wire aldff_slow_0_1_1_ALOAD;
-  input aldff_slow_0_1_1_CLK;
-  wire aldff_slow_0_1_1_CLK;
-  input aldff_slow_0_1_1_D;
-  wire aldff_slow_0_1_1_D;
-  output aldff_slow_0_1_1_Q;
-  wire aldff_slow_0_1_1_Q;
-  input aldff_slow_1_0_1_AD;
-  wire aldff_slow_1_0_1_AD;
-  input aldff_slow_1_0_1_ALOAD;
-  wire aldff_slow_1_0_1_ALOAD;
-  input aldff_slow_1_0_1_CLK;
-  wire aldff_slow_1_0_1_CLK;
-  input aldff_slow_1_0_1_D;
-  wire aldff_slow_1_0_1_D;
-  output aldff_slow_1_0_1_Q;
-  wire aldff_slow_1_0_1_Q;
-  input aldff_slow_1_1_1_AD;
-  wire aldff_slow_1_1_1_AD;
-  input aldff_slow_1_1_1_ALOAD;
-  wire aldff_slow_1_1_1_ALOAD;
-  input aldff_slow_1_1_1_CLK;
-  wire aldff_slow_1_1_1_CLK;
-  input aldff_slow_1_1_1_D;
-  wire aldff_slow_1_1_1_D;
-  output aldff_slow_1_1_1_Q;
-  wire aldff_slow_1_1_1_Q;
   input and_fast_0_1_0_1_1_A;
   wire and_fast_0_1_0_1_1_A;
   input and_fast_0_1_0_1_1_B;
@@ -21592,62 +21382,6 @@ module characterize(not_slow_0_1_1_A, not_slow_0_1_1_Y, not_slow_1_1_1_A, not_sl
     .D(adlatch_slow_1_0_1_1_D),
     .EN(adlatch_slow_1_0_1_1_EN),
     .Q(adlatch_slow_1_0_1_1_Q)
-  );
-  aldff_fast_0_0_1 inst_aldff_fast_0_0_1 (
-    .AD(aldff_fast_0_0_1_AD),
-    .ALOAD(aldff_fast_0_0_1_ALOAD),
-    .CLK(aldff_fast_0_0_1_CLK),
-    .D(aldff_fast_0_0_1_D),
-    .Q(aldff_fast_0_0_1_Q)
-  );
-  aldff_fast_0_1_1 inst_aldff_fast_0_1_1 (
-    .AD(aldff_fast_0_1_1_AD),
-    .ALOAD(aldff_fast_0_1_1_ALOAD),
-    .CLK(aldff_fast_0_1_1_CLK),
-    .D(aldff_fast_0_1_1_D),
-    .Q(aldff_fast_0_1_1_Q)
-  );
-  aldff_fast_1_0_1 inst_aldff_fast_1_0_1 (
-    .AD(aldff_fast_1_0_1_AD),
-    .ALOAD(aldff_fast_1_0_1_ALOAD),
-    .CLK(aldff_fast_1_0_1_CLK),
-    .D(aldff_fast_1_0_1_D),
-    .Q(aldff_fast_1_0_1_Q)
-  );
-  aldff_fast_1_1_1 inst_aldff_fast_1_1_1 (
-    .AD(aldff_fast_1_1_1_AD),
-    .ALOAD(aldff_fast_1_1_1_ALOAD),
-    .CLK(aldff_fast_1_1_1_CLK),
-    .D(aldff_fast_1_1_1_D),
-    .Q(aldff_fast_1_1_1_Q)
-  );
-  aldff_slow_0_0_1 inst_aldff_slow_0_0_1 (
-    .AD(aldff_slow_0_0_1_AD),
-    .ALOAD(aldff_slow_0_0_1_ALOAD),
-    .CLK(aldff_slow_0_0_1_CLK),
-    .D(aldff_slow_0_0_1_D),
-    .Q(aldff_slow_0_0_1_Q)
-  );
-  aldff_slow_0_1_1 inst_aldff_slow_0_1_1 (
-    .AD(aldff_slow_0_1_1_AD),
-    .ALOAD(aldff_slow_0_1_1_ALOAD),
-    .CLK(aldff_slow_0_1_1_CLK),
-    .D(aldff_slow_0_1_1_D),
-    .Q(aldff_slow_0_1_1_Q)
-  );
-  aldff_slow_1_0_1 inst_aldff_slow_1_0_1 (
-    .AD(aldff_slow_1_0_1_AD),
-    .ALOAD(aldff_slow_1_0_1_ALOAD),
-    .CLK(aldff_slow_1_0_1_CLK),
-    .D(aldff_slow_1_0_1_D),
-    .Q(aldff_slow_1_0_1_Q)
-  );
-  aldff_slow_1_1_1 inst_aldff_slow_1_1_1 (
-    .AD(aldff_slow_1_1_1_AD),
-    .ALOAD(aldff_slow_1_1_1_ALOAD),
-    .CLK(aldff_slow_1_1_1_CLK),
-    .D(aldff_slow_1_1_1_D),
-    .Q(aldff_slow_1_1_1_Q)
   );
   and_fast_0_1_0_1_1 inst_and_fast_0_1_0_1_1 (
     .A(and_fast_0_1_0_1_1_A),
